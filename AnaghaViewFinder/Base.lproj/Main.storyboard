@@ -13,7 +13,7 @@
         <!--AnaghaViewFinder-->
         <scene sceneID="3mx-qo-gHq">
             <objects>
-                <tableViewController id="RPR-vc-7ZK" sceneMemberID="viewController">
+                <tableViewController id="RPR-vc-7ZK" customClass="PostTableViewController" customModule="AnaghaViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qaq-TD-Ygj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,8 +59,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SND-6a-EyY">
-                                <rect key="frame" x="47" y="552" width="54" height="30"/>
+                                <rect key="frame" x="47" y="552" width="58" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="20"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="accessCamera:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="UpA-mB-zjC"/>
@@ -75,13 +76,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mt9-hj-UIq">
-                                <rect key="frame" x="152" y="452" width="111" height="30"/>
+                                <rect key="frame" x="142" y="452" width="139" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="20"/>
                                 <state key="normal" title="Save This Photo"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="1Ci-9A-gvH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEB-Da-euK">
-                                <rect key="frame" x="316" y="552" width="52" height="30"/>
+                                <rect key="frame" x="315" y="552" width="62" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="20"/>
                                 <state key="normal" title="Albums"/>
                                 <connections>
                                     <action selector="accessAlbums:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="bWF-Sk-Ufn"/>
@@ -94,6 +100,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="hL6-3g-5wr"/>
                     <connections>
+                        <outlet property="captionText" destination="UXt-M8-zIE" id="10s-q7-TRX"/>
                         <outlet property="imageView" destination="rFv-Vx-4Jb" id="Oy1-YM-jKC"/>
                         <outlet property="inageView" destination="rFv-Vx-4Jb" id="BsX-JB-PU7"/>
                     </connections>
