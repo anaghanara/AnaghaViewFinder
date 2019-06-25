@@ -49,7 +49,7 @@
         <!--Add New Photo-->
         <scene sceneID="hlw-H4-uuB">
             <objects>
-                <viewController id="Gk6-OP-NWz" sceneMemberID="viewController">
+                <viewController id="Gk6-OP-NWz" customClass="AddPhotoViewController" customModule="AnaghaViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cfu-Yd-eWF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,6 +62,10 @@
                                 <rect key="frame" x="47" y="552" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="accessCamera:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="UpA-mB-zjC"/>
+                                    <action selector="cameraTapped:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="LV0-B8-H9v"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UXt-M8-zIE">
                                 <rect key="frame" x="80" y="414" width="257" height="30"/>
@@ -79,12 +83,20 @@
                                 <rect key="frame" x="316" y="552" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="accessAlbums:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="bWF-Sk-Ufn"/>
+                                    <action selector="albumTapped:" destination="Gk6-OP-NWz" eventType="touchUpInside" id="Vuu-oa-ycA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dOS-M1-Q9S"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="hL6-3g-5wr"/>
+                    <connections>
+                        <outlet property="imageView" destination="rFv-Vx-4Jb" id="Oy1-YM-jKC"/>
+                        <outlet property="inageView" destination="rFv-Vx-4Jb" id="BsX-JB-PU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQb-F5-Q5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
