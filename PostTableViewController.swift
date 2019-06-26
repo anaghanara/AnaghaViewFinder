@@ -24,18 +24,36 @@ class PostTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    func tableView() {
+
+        tableView(<#T##tableView: UITableView##UITableView#>, didSelectRowAt: <#T##IndexPath#>)
+        performSegue(withIdentifier: "moveToDetail", sender: photos[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moveToDetail" {
+            if let photoDetailView = segue.destination as? PhotoDetailViewController {
+                
+                if let photoToSend = sender as? Photos {
+                    photoDetailView.photo = photoToSend
+                }
+                
+            }
+        }
+    }
     func getPhotos() {
     
     if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-        if let coreDataPhotos = try? context.fetch(Photos.fetchRequest()) as? [Photos] {
-            if let unwrappedPhotos = coreDataPhotos {
-                photos = unwrappedPhotos
+        if (try? context.fetch(Photos.fetchRequest()) as? [Photos]) != nil {
+            if let coreDataPhotos = try? context.fetch(Photos.fetchRequest()) as? [Photos] {
+                photos = coreDataPhotos
                 tableView.reloadData()
                 }
     
             }
     
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
